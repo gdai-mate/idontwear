@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>cart - idontwear</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+
+<!-- WINDOW HEADER -->
+<table width="100%" cellpadding="2" cellspacing="0" border="0" bgcolor="#e8e8e8" style="border-bottom: 1px solid #999999;">
+    <tr>
+        <td>
+            <font face="Geneva, Arial, sans-serif" size="2">
+                <b>idontwear</b> - cart.html
+            </font>
+        </td>
+        <td align="right">
+            <font face="Geneva, Arial, sans-serif" size="1" color="#666666">
+                <span id="cart-summary">0 items, $0.00</span>
+            </font>
+        </td>
+    </tr>
+</table>
+
+<!-- NAVIGATION BAR -->
+<table width="100%" cellpadding="4" cellspacing="0" border="0" bgcolor="#f0f0f0" style="border-bottom: 1px solid #cccccc;">
+    <tr>
+        <td>
+            <font face="Geneva, Arial, sans-serif" size="2">
+                <a href="index.html" style="color: #000000; text-decoration: none;">index.html</a>
+                &nbsp;&nbsp;
+                <a href="products.html" style="color: #000000; text-decoration: none;">products.html</a>
+                &nbsp;&nbsp;
+                <a href="contact.html" style="color: #000000; text-decoration: none;">contact.html</a>
+                &nbsp;&nbsp;
+                <a href="cart.html" style="color: #000000; text-decoration: none; font-weight: bold;">cart.html</a>
+                <span id="cart-count" style="color: #666666; font-size: 10px;">(0)</span>
+            </font>
+        </td>
+    </tr>
+</table>
+
+<!-- MAIN CONTENT AREA -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td width="20" bgcolor="#f8f8f8" style="border-right: 1px solid #cccccc;">&nbsp;</td>
+        <td valign="top" bgcolor="#ffffff" style="padding: 20px;">
+            
+            <!-- FILE HEADER -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td>
+                        <font face="Monaco, Courier, monospace" size="3">
+                            shopping_cart/<br>
+                        </font>
+                        <font face="Geneva, Arial, sans-serif" size="2" color="#666666">
+                            your selections
+                        </font>
+                    </td>
+                </tr>
+            </table>
+            
+            <br>
+            
+            <!-- SYSTEM WARNING -->
+            <table width="100%" cellpadding="8" cellspacing="0" border="0" style="background-color: #fff8e1; border: 1px solid #ffcc00;">
+                <tr>
+                    <td>
+                        <font face="Geneva, Arial, sans-serif" size="2" color="#cc6600">
+                            <b>WARNING:</b> Cart data stored in memory only. Refresh will clear contents.
+                        </font>
+                    </td>
+                </tr>
+            </table>
+            
+            <br><br>
+            
+            <!-- CART CONTENTS -->
+            <div id="cart-items">
+                <!-- Dynamic cart content will be inserted here -->
+            </div>
+            
+            <!-- EMPTY CART DISPLAY -->
+            <div id="empty-cart" style="display: block;">
+                <table width="100%" cellpadding="3" cellspacing="0" border="0" style="border: 1px solid #cccccc;">
+                    <tr bgcolor="#f0f0f0">
+                        <td>
+                            <font face="Geneva, Arial, sans-serif" size="1" color="#666666">
+                                <b>CART_CONTENTS.TXT - EMPTY</b>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 30px; text-align: center;">
+                            <font face="Geneva, Arial, sans-serif" size="2" color="#999999">
+                                No items in cart<br><br>
+                                <a href="products.html" style="color: #000000; text-decoration: underline;">
+                                    Browse products to add items
+                                </a>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- CHECKOUT SECTION (hidden initially) -->
+            <div id="checkout-section" style="display: none;">
+                
+                <br><br>
+                
+                <!-- SHIPPING INFO FILE -->
+                <table width="100%" cellpadding="3" cellspacing="0" border="0" style="border: 1px solid #cccccc;">
+                    <tr bgcolor="#f0f0f0">
+                        <td>
+                            <font face="Geneva, Arial, sans-serif" size="1" color="#666666">
+                                <b>SHIPPING_INFO.TXT</b>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; font-family: Monaco, Courier, monospace; font-size: 11px; white-space: pre-line;">shipping: $15.00 flat rate (US only)
+processing: 2-3 weeks minimum
+payment: cash, check, money order
+
+notes:
+  - no credit cards accepted
+  - no international shipping
+  - all sales final
+  - demo mode: no real orders</td>
+                    </tr>
+                </table>
+                
+                <br><br>
+                
+                <!-- CHECKOUT FORM -->
+                <table width="100%" cellpadding="3" cellspacing="0" border="0" style="border: 1px solid #cccccc;">
+                    <tr bgcolor="#f0f0f0">
+                        <td colspan="2">
+                            <font face="Geneva, Arial, sans-serif" size="1" color="#666666">
+                                <b>CHECKOUT_FORM.HTML</b>
+                            </font>
+                        </td>
+                    </tr>
+                    
+                    <form name="checkoutForm" onsubmit="return processCheckout()">
+                    <tr style="border-top: 1px solid #e0e0e0;">
+                        <td width="120" valign="top" style="padding: 8px;">
+                            <font face="Geneva, Arial, sans-serif" size="2">
+                                customer_name
+                            </font>
+                        </td>
+                        <td style="padding: 8px;">
+                            <input type="text" name="name" size="25" required style="font-family: Monaco, Courier, monospace; font-size: 11px;">
+                        </td>
+                    </tr>
+                    
+                    <tr style="border-top: 1px solid #e0e0e0;">
+                        <td valign="top" style="padding: 8px;">
+                            <font face="Geneva, Arial, sans-serif" size="2">
+                                address_line1
+                            </font>
+                        </td>
+                        <td style="padding: 8px;">
+                            <input type="text" name="address" size="30" required style="font-family: Monaco, Courier, monospace; font-size: 11px;">
+                        </td>
+                    </tr>
+                    
+                    <tr style="border-top: 1px solid #e0e0e0;">
+                        <td valign="top" style="padding: 8px;">
+                            <font face="Geneva, Arial, sans-serif" size="2">
+                                city
+                            </font>
+                        </td>
+                        <td style="padding: 8px;">
+                            <input type="text" name="city" size="20" required style="font-family: Monaco, Courier, monospace; font-size: 11px;">
+                        </td>
+                    </tr>
+                    
+                    <tr style="border-top: 1px solid #e0e0e0;">
+                        <td valign="top" style="padding: 8px;">
+                            <font face="Geneva, Arial, sans-serif" size="2">
+                                state
+                            </font>
+                        </td>
+                        <td style="padding: 8px;">
+                            <select name="state" required style="font-family: Geneva, Arial, sans-serif; font-size: 11px;">
+                                <option value="">Select State</option>
+                                <option value="NY">New York</option>
+                                <option value="CA">California</option>
+                                <option value="FL">Florida</option>
+                                <option value="TX">Texas</option>
+                                <option value="OTHER">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    
+                    <tr style="border-top: 1px solid #e0e0e0;">
+                        <td valign="top" style="padding: 8px;">
+                            <font face="Geneva, Arial, sans-serif" size="2">
+                                zip_code
+                            </font>
+                        </td>
+                        <td style="padding: 8px;">
+                            <input type="text" name="zip" size="10" maxlength="5" required style="font-family: Monaco, Courier, monospace; font-size: 11px;">
+                        </td>
+                    </tr>
+                    
+                    <tr style="border-top: 1px solid #e0e0e0;">
+                        <td colspan="2" align="center" style="padding: 15px;">
+                            <input type="submit" value="process order" class="btn">
+                            &nbsp;&nbsp;
+                            <input type="button" value="clear cart" class="btn" onclick="clearCart()">
+                        </td>
+                    </tr>
+                    </form>
+                </table>
+                
+                <br>
+                
+                <!-- DISCLAIMER -->
+                <table width="100%" cellpadding="8" cellspacing="0" border="0" style="background-color: #f8f8f8; border: 1px solid #cccccc;">
+                    <tr>
+                        <td>
+                            <font face="Geneva, Arial, sans-serif" size="2">
+                                <b>Demo Notice:</b>
+                            </font>
+                            <br>
+                            <font face="Geneva, Arial, sans-serif" size="2" color="#666666">
+                                This is a demonstration checkout system.<br>
+                                No real orders will be processed or charged.
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <br><br>
+            
+            <!-- SYSTEM INFO -->
+            <font face="Monaco, Courier, monospace" size="1" color="#999999">
+                Cart system: JavaScript v1.0<br>
+                Last modified: 2001<br>
+                Status: Functional (demo mode)
+            </font>
+            
+        </td>
+    </tr>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>

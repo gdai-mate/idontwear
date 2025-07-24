@@ -1,0 +1,12 @@
+PLACEHOLDER - Upload logo here
+
+Logo: idontwear main brand logo
+Recommended specs:
+- Format: PNG (with transparency)
+- Size: 200x60px for header use
+- Style: Brutalist typography
+- Font: Monospace or serif
+- Colors: Black text on transparent background
+- Aesthetic: Raw, digital, lo-fi
+
+Replace this file with: idontwear_logo.png

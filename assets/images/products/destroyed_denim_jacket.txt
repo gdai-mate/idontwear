@@ -1,0 +1,11 @@
+PLACEHOLDER - Upload product image here
+
+Product: Destroyed Denim Jacket
+Recommended specs:
+- Format: JPEG
+- Size: 400x400px
+- Style: Vintage wash, hand-distressed denim
+- Aesthetic: Lo-fi, grainy, high contrast
+- Colors: Faded blue denim with brown/tan undertones
+
+Replace this file with: destroyed_denim_jacket.jpg

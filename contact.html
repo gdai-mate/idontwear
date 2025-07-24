@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>contact - idontwear</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+
+<!-- WINDOW HEADER -->
+<table width="100%" cellpadding="2" cellspacing="0" border="0" bgcolor="#e8e8e8" style="border-bottom: 1px solid #999999;">
+    <tr>
+        <td>
+            <font face="Geneva, Arial, sans-serif" size="2">
+                <b>idontwear</b> - contact.html
+            </font>
+        </td>
+        <td align="right">
+            <font face="Geneva, Arial, sans-serif" size="1" color="#666666">
+                Last updated: Never
+            </font>
+        </td>
+    </tr>
+</table>
+
+<!-- NAVIGATION BAR -->
+<table width="100%" cellpadding="4" cellspacing="0" border="0" bgcolor="#f0f0f0" style="border-bottom: 1px solid #cccccc;">
+    <tr>
+        <td>
+            <font face="Geneva, Arial, sans-serif" size="2">
+                <a href="index.html" style="color: #000000; text-decoration: none;">index.html</a>
+                &nbsp;&nbsp;
+                <a href="products.html" style="color: #000000; text-decoration: none;">products.html</a>
+                &nbsp;&nbsp;
+                <a href="contact.html" style="color: #000000; text-decoration: none; font-weight: bold;">contact.html</a>
+                &nbsp;&nbsp;
+                <a href="cart.html" style="color: #000000; text-decoration: none;">cart.html</a>
+                <span id="cart-count" style="color: #666666; font-size: 10px;">(0)</span>
+            </font>
+        </td>
+    </tr>
+</table>
+
+<!-- MAIN CONTENT AREA -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td width="20" bgcolor="#f8f8f8" style="border-right: 1px solid #cccccc;">&nbsp;</td>
+        <td valign="top" bgcolor="#ffffff" style="padding: 20px;">
+            
+            <!-- FILE HEADER -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td>
+                        <font face="Monaco, Courier, monospace" size="3">
+                            contact/<br>
+                        </font>
+                        <font face="Geneva, Arial, sans-serif" size="2" color="#666666">
+                            get in touch with us
+                        </font>
+                    </td>
+                </tr>
+            </table>
+            
+            <br>
+            
+            <!-- DEPRECATED NOTICE -->
+            <table width="100%" cellpadding="8" cellspacing="0" border="0" style="background-color: #fff8e1; border: 1px solid #ffcc00;">
+                <tr>
+                    <td>
+                        <font face="Geneva, Arial, sans-serif" size="2" color="#cc6600">
+                            <b>NOTICE:</b> Form may not work properly on all systems. Direct email recommended.
+                        </font>
+                    </td>
+                </tr>
+            </table>
+            
+            <br><br>
+            
+            <!-- CONTACT FORM AS FILE LISTING -->
+            <table width="100%" cellpadding="3" cellspacing="0" border="0" style="border: 1px solid #cccccc;">
+                <tr bgcolor="#f0f0f0">
+                    <td colspan="2">
+                        <font face="Geneva, Arial, sans-serif" size="1" color="#666666">
+                            <b>CONTACT FORM - v1.2</b>
+                        </font>
+                    </td>
+                </tr>
+                
+                <form name="contactForm" method="post" action="#" onsubmit="return submitForm()">
+                <tr style="border-top: 1px solid #e0e0e0;">
+                    <td width="120" valign="top" style="padding: 8px;">
+                        <font face="Geneva, Arial, sans-serif" size="2">
+                            name.txt
+                        </font>
+                    </td>
+                    <td style="padding: 8px;">
+                        <input type="text" name="name" size="30" maxlength="50" style="font-family: Monaco, Courier, monospace; font-size: 11px;">
+                        <font face="Geneva, Arial, sans-serif" size="1" color="#999999">
+                            *required field
+                        </font>
+                    </td>
+                </tr>
+                
+                <tr style="border-top: 1px solid #e0e0e0;">
+                    <td valign="top" style="padding: 8px;">
+                        <font face="Geneva, Arial, sans-serif" size="2">
+                            email.txt
+                        </font>
+                    </td>
+                    <td style="padding: 8px;">
+                        <input type="text" name="email" size="30" maxlength="80" style="font-family: Monaco, Courier, monospace; font-size: 11px;">
+                        <font face="Geneva, Arial, sans-serif" size="1" color="#999999">
+                            *required field
+                        </font>
+                    </td>
+                </tr>
+                
+                <tr style="border-top: 1px solid #e0e0e0;">
+                    <td valign="top" style="padding: 8px;">
+                        <font face="Geneva, Arial, sans-serif" size="2">
+                            subject.txt
+                        </font>
+                    </td>
+                    <td style="padding: 8px;">
+                        <select name="subject" style="font-family: Geneva, Arial, sans-serif; font-size: 11px;">
+                            <option value="">Select...</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="order">Order Status</option>
+                            <option value="custom">Custom Work</option>
+                            <option value="wholesale">Wholesale Inquiry</option>
+                            <option value="broken">Website Issues</option>
+                        </select>
+                    </td>
+                </tr>
+                
+                <tr style="border-top: 1px solid #e0e0e0;">
+                    <td valign="top" style="padding: 8px;">
+                        <font face="Geneva, Arial, sans-serif" size="2">
+                            message.txt
+                        </font>
+                    </td>
+                    <td style="padding: 8px;">
+                        <textarea name="message" rows="8" cols="40" style="font-family: Monaco, Courier, monospace; font-size: 11px;"></textarea>
+                        <br>
+                        <font face="Geneva, Arial, sans-serif" size="1" color="#999999">
+                            *required, max 1000 characters
+                        </font>
+                    </td>
+                </tr>
+                
+                <tr style="border-top: 1px solid #e0e0e0;">
+                    <td colspan="2" align="center" style="padding: 15px;">
+                        <input type="submit" value="send" class="btn">
+                        &nbsp;&nbsp;
+                        <input type="reset" value="clear" class="btn">
+                    </td>
+                </tr>
+                </form>
+            </table>
+            
+            <br><br>
+            
+            <!-- CONTACT INFO FILE -->
+            <table width="100%" cellpadding="3" cellspacing="0" border="0" style="border: 1px solid #cccccc;">
+                <tr bgcolor="#f0f0f0">
+                    <td>
+                        <font face="Geneva, Arial, sans-serif" size="1" color="#666666">
+                            <b>CONTACT_INFO.TXT</b>
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; font-family: Monaco, Courier, monospace; font-size: 11px; white-space: pre-line;">email: info@idontwear.com
+orders: orders@idontwear.com
+custom: custom@idontwear.com
+phone: (555) IDO-NTWEAR
+
+address:
+  Underground Workshop
+  Somewhere in NYC
+  By appointment only
+  
+hours: when we feel like it
+       (usually after midnight)
+
+notes:
+  - no returns policy
+  - custom work timing varies
+  - site intentionally ugly
+  - we don't hire, we recruit</td>
+                </tr>
+            </table>
+            
+            <br><br>
+            
+            <!-- DISCLAIMER BOX -->
+            <table width="100%" cellpadding="8" cellspacing="0" border="0" style="background-color: #f8f8f8; border: 1px solid #cccccc;">
+                <tr>
+                    <td>
+                        <font face="Geneva, Arial, sans-serif" size="2">
+                            <b>Important:</b>
+                        </font>
+                        <br>
+                        <font face="Geneva, Arial, sans-serif" size="2" color="#666666">
+                            This contact form is for demonstration purposes only.<br>
+                            Messages submitted will not be delivered.<br>
+                            For real inquiries, email us directly.
+                        </font>
+                    </td>
+                </tr>
+            </table>
+            
+            <br><br>
+            
+            <!-- SYSTEM INFO -->
+            <font face="Monaco, Courier, monospace" size="1" color="#999999">
+                Form created: 2001<br>
+                Last tested: Never<br>
+                Compatibility: Unknown
+            </font>
+            
+        </td>
+    </tr>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>

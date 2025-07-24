@@ -1,0 +1,286 @@
+/* idontwear system interface stylesheet */
+
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Geneva", "Arial", sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+/* SYSTEM WINDOW STYLING */
+.window-header {
+    background-color: #e8e8e8;
+    border-bottom: 1px solid #999999;
+    padding: 2px;
+}
+
+.navigation-bar {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #cccccc;
+    padding: 4px;
+}
+
+/* LINK STYLING - minimal system style */
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: #666666;
+}
+
+/* BUTTON STYLING - system button style */
+.btn {
+    font-family: "Geneva", "Arial", sans-serif;
+    font-size: 11px;
+    background-color: #f0f0f0;
+    color: #000000;
+    border: 1px solid #999999;
+    padding: 2px 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #e0e0e0;
+    border-color: #666666;
+}
+
+.btn:active {
+    background-color: #d0d0d0;
+    border-style: inset;
+}
+
+.btn:disabled {
+    background-color: #f8f8f8;
+    color: #999999;
+    border-color: #cccccc;
+    cursor: default;
+}
+
+/* FORM ELEMENTS - system style */
+input, textarea, select {
+    font-family: "Geneva", "Arial", sans-serif;
+    font-size: 11px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #999999;
+    padding: 2px;
+}
+
+input:focus, textarea:focus, select:focus {
+    background-color: #ffffcc;
+    outline: none;
+    border-color: #666666;
+}
+
+/* TABLE STYLING */
+table {
+    border-collapse: collapse;
+}
+
+td {
+    vertical-align: top;
+}
+
+/* FILE LISTING STYLES */
+.file-listing {
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+}
+
+.file-listing tr:hover {
+    background-color: #f0f0f0;
+}
+
+.file-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #cccccc;
+}
+
+.file-row {
+    border-top: 1px solid #e0e0e0;
+}
+
+/* STATUS COLORS */
+.status-available {
+    color: #006600;
+}
+
+.status-unavailable {
+    color: #cc0000;
+}
+
+.status-pending {
+    color: #cc6600;
+}
+
+/* CART COUNTER */
+#cart-count {
+    background-color: #e0e0e0;
+    color: #666666;
+    padding: 1px 3px;
+    font-size: 10px;
+    border: 1px solid #cccccc;
+    margin-left: 4px;
+}
+
+/* SYSTEM INFO STYLING */
+.system-info {
+    font-family: "Monaco", "Courier", monospace;
+    font-size: 10px;
+    color: #999999;
+}
+
+/* CONTACT FORM - system dialog style */
+.contact-form {
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 200px;
+    margin: 2px 0;
+}
+
+/* SIDEBAR */
+.sidebar {
+    background-color: #f8f8f8;
+    border-right: 1px solid #cccccc;
+    width: 20px;
+}
+
+/* CONTENT AREA */
+.content-area {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+/* SYSTEM NOTES BOX */
+.notes-box {
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+/* DIRECTORY LISTING */
+.directory-listing {
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.directory-listing tr:hover {
+    background-color: #e8e8e8;
+}
+
+/* CART STYLES */
+.cart-empty {
+    text-align: center;
+    padding: 40px;
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+}
+
+.cart-table {
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.cart-table th {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #cccccc;
+    padding: 4px;
+    font-size: 11px;
+}
+
+.cart-table td {
+    border-top: 1px solid #e0e0e0;
+    padding: 4px;
+}
+
+.cart-total {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* ERROR/SUCCESS MESSAGES */
+.error-msg {
+    background-color: #ffe0e0;
+    color: #cc0000;
+    border: 1px solid #ff9999;
+    padding: 8px;
+    margin: 10px 0;
+    font-size: 11px;
+}
+
+.success-msg {
+    background-color: #e0ffe0;
+    color: #006600;
+    border: 1px solid #99ff99;
+    padding: 8px;
+    margin: 10px 0;
+    font-size: 11px;
+}
+
+/* TYPOGRAPHY CLASSES */
+.mono {
+    font-family: "Monaco", "Courier", monospace;
+    font-size: 11px;
+}
+
+.system-font {
+    font-family: "Geneva", "Arial", sans-serif;
+    font-size: 12px;
+}
+
+/* UTILITY CLASSES */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-small { font-size: 10px; }
+.text-mono { font-family: "Monaco", "Courier", monospace; }
+.text-muted { color: #666666; }
+.text-error { color: #cc0000; }
+.text-success { color: #006600; }
+
+/* SPACING */
+.spacer-sm { height: 10px; }
+.spacer-md { height: 20px; }
+.spacer-lg { height: 30px; }
+
+/* PRINT STYLES */
+@media print {
+    body { 
+        background: white; 
+        color: black; 
+        font-size: 10px;
+    }
+    .navigation-bar, 
+    .sidebar,
+    .btn { 
+        display: none; 
+    }
+    .window-header {
+        background: white;
+        border: none;
+    }
+}

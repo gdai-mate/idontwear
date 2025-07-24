@@ -1,0 +1,11 @@
+PLACEHOLDER - Upload product image here
+
+Product: Steel Toe Work Boots
+Recommended specs:
+- Format: JPEG
+- Size: 400x400px
+- Style: Used condition steel toe boots
+- Aesthetic: Weathered, industrial, functional
+- Colors: Dark brown leather, worn appearance
+
+Replace this file with: work_boots.jpg

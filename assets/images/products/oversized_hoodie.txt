@@ -1,0 +1,11 @@
+PLACEHOLDER - Upload product image here
+
+Product: Oversized Hoodie
+Recommended specs:
+- Format: JPEG
+- Size: 400x400px
+- Style: Faded black, vintage feel
+- Aesthetic: Worn, comfortable, oversized
+- Colors: Faded black, grey undertones
+
+Replace this file with: oversized_hoodie.jpg

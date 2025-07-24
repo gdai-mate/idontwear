@@ -1,0 +1,11 @@
+PLACEHOLDER - Upload product image here
+
+Product: Chain Wallet
+Recommended specs:
+- Format: JPEG
+- Size: 400x400px
+- Style: Black leather with 12" chain
+- Aesthetic: Raw, street, functional
+- Colors: Black leather, silver chain
+
+Replace this file with: chain_wallet.jpg

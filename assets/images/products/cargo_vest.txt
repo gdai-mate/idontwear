@@ -1,0 +1,11 @@
+PLACEHOLDER - Upload product image here
+
+Product: Cargo Vest
+Recommended specs:
+- Format: JPEG
+- Size: 400x400px
+- Style: Military surplus with custom pockets
+- Aesthetic: Utilitarian, worn, functional
+- Colors: Olive green, muted earth tones
+
+Replace this file with: cargo_vest.jpg

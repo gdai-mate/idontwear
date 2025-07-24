@@ -1,0 +1,11 @@
+PLACEHOLDER - Upload product image here
+
+Product: Cargo Pants
+Recommended specs:
+- Format: JPEG
+- Size: 400x400px
+- Style: Olive green with multiple pockets
+- Aesthetic: Military surplus, functional
+- Colors: Olive green, muted earth tones
+
+Replace this file with: cargo_pants.jpg
