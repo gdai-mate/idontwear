@@ -61,6 +61,38 @@ function addToCart(id, name, price) {
     }
 }
 
+// Add item to cart from product page (with size validation)
+function addToCartFromProduct(id, name, price) {
+    // Check for size selection if there's a size select element
+    var sizeSelect = document.getElementById('size-select');
+    var selectedSize = '';
+    
+    if (sizeSelect && sizeSelect.value === '') {
+        alert('ERROR: Please select a size before adding to cart!');
+        sizeSelect.focus();
+        return;
+    } else if (sizeSelect) {
+        selectedSize = sizeSelect.value;
+        // Add size to the product name for cart display
+        name = name + ' (Size: ' + selectedSize + ')';
+        // Update id to include size for unique cart entries
+        id = id + '-' + selectedSize.toLowerCase();
+    }
+    
+    // Use the regular addToCart function
+    addToCart(id, name, price);
+    
+    // Show success message with return option
+    setTimeout(function() {
+        var continueMessage = 'Continue shopping or go to cart?\n\nClick OK to continue shopping\nClick Cancel to view your cart';
+        var continueShopping = confirm(continueMessage);
+        
+        if (!continueShopping) {
+            window.location.href = 'cart.html';
+        }
+    }, 100);
+}
+
 // Remove item from cart
 function removeFromCart(id) {
     var itemName = '';
@@ -115,24 +147,33 @@ function updateQuantity(id, newQuantity) {
 // Update cart count in navigation
 function updateCartCount() {
     var totalItems = 0;
+    var totalValue = 0;
     for (var i = 0; i < cart.length; i++) {
         totalItems += cart[i].quantity;
+        totalValue += cart[i].price * cart[i].quantity;
     }
     
     var cartCountElement = document.getElementById('cart-count');
+    var cartSummaryElement = document.getElementById('cart-summary');
+    
     if (cartCountElement) {
         cartCountElement.innerHTML = '(' + totalItems + ')';
         
         // Change color if items in cart
         if (totalItems > 0) {
-            cartCountElement.style.backgroundColor = '#5a4f42';
-            cartCountElement.style.color = '#f8f7f5';
+            cartCountElement.style.backgroundColor = '#cccccc';
+            cartCountElement.style.color = '#000000';
             cartCountElement.style.padding = '1px 4px';
         } else {
             cartCountElement.style.backgroundColor = '';
-            cartCountElement.style.color = '#7a6f61';
+            cartCountElement.style.color = '#666666';
             cartCountElement.style.padding = '';
         }
+    }
+    
+    // Update cart summary in header (for cart page)
+    if (cartSummaryElement) {
+        cartSummaryElement.innerHTML = totalItems + ' items, $' + totalValue.toFixed(2);
     }
 }
 
@@ -156,13 +197,13 @@ function displayCartItems() {
     cartItemsDiv.style.display = 'block';
     checkoutSection.style.display = 'block';
     
-    var cartHTML = '<table width="90%" cellpadding="10" cellspacing="0" border="2" bordercolor="#5d4e37" bgcolor="#a39691">';
-    cartHTML += '<tr bgcolor="#736b5e">';
-    cartHTML += '<td><font face="Courier New, monospace" size="2" color="#8b8680"><b>ITEM</b></font></td>';
-    cartHTML += '<td align="center"><font face="Courier New, monospace" size="2" color="#8b8680"><b>PRICE</b></font></td>';
-    cartHTML += '<td align="center"><font face="Courier New, monospace" size="2" color="#8b8680"><b>QTY</b></font></td>';
-    cartHTML += '<td align="center"><font face="Courier New, monospace" size="2" color="#8b8680"><b>TOTAL</b></font></td>';
-    cartHTML += '<td align="center"><font face="Courier New, monospace" size="2" color="#8b8680"><b>ACTION</b></font></td>';
+    var cartHTML = '<table width="100%" cellpadding="3" cellspacing="0" border="0" style="border: 1px solid #cccccc;">';
+    cartHTML += '<tr bgcolor="#f0f0f0">';
+    cartHTML += '<td><font face="Geneva, Arial, sans-serif" size="1" color="#666666"><b>NAME</b></font></td>';
+    cartHTML += '<td align="center" width="80"><font face="Geneva, Arial, sans-serif" size="1" color="#666666"><b>PRICE</b></font></td>';
+    cartHTML += '<td align="center" width="60"><font face="Geneva, Arial, sans-serif" size="1" color="#666666"><b>QTY</b></font></td>';
+    cartHTML += '<td align="center" width="80"><font face="Geneva, Arial, sans-serif" size="1" color="#666666"><b>TOTAL</b></font></td>';
+    cartHTML += '<td align="center" width="60"><font face="Geneva, Arial, sans-serif" size="1" color="#666666"><b>ACTION</b></font></td>';
     cartHTML += '</tr>';
     
     var subtotal = 0;
@@ -172,15 +213,15 @@ function displayCartItems() {
         var itemTotal = item.price * item.quantity;
         subtotal += itemTotal;
         
-        cartHTML += '<tr>';
-        cartHTML += '<td><font face="Georgia, serif" size="2" color="#4a3c28"><b>' + item.name + '</b></font></td>';
-        cartHTML += '<td align="center"><font face="Courier New, monospace" size="2" color="#5d4e37">$' + item.price.toFixed(2) + '</font></td>';
-        cartHTML += '<td align="center">';
-        cartHTML += '<input type="text" value="' + item.quantity + '" size="3" onchange="updateQuantity(\'' + item.id + '\', this.value)" style="text-align: center;">';
+        cartHTML += '<tr style="border-top: 1px solid #e0e0e0;">';
+        cartHTML += '<td style="padding: 8px;"><font face="Geneva, Arial, sans-serif" size="2">' + item.name + '</font></td>';
+        cartHTML += '<td align="center" style="padding: 8px;"><font face="Monaco, Courier, monospace" size="2">$' + item.price.toFixed(2) + '</font></td>';
+        cartHTML += '<td align="center" style="padding: 8px;">';
+        cartHTML += '<input type="text" value="' + item.quantity + '" size="3" onchange="updateQuantity(\'' + item.id + '\', this.value)" style="text-align: center; font-family: Monaco, Courier, monospace; font-size: 11px;">';
         cartHTML += '</td>';
-        cartHTML += '<td align="center"><font face="Courier New, monospace" size="2" color="#4a3c28"><b>$' + itemTotal.toFixed(2) + '</b></font></td>';
-        cartHTML += '<td align="center">';
-        cartHTML += '<button class="btn" onclick="removeFromCart(\'' + item.id + '\')" style="font-size: 10px;">REMOVE</button>';
+        cartHTML += '<td align="center" style="padding: 8px;"><font face="Monaco, Courier, monospace" size="2"><b>$' + itemTotal.toFixed(2) + '</b></font></td>';
+        cartHTML += '<td align="center" style="padding: 8px;">';
+        cartHTML += '<button class="btn" onclick="removeFromCart(\'' + item.id + '\')" style="font-size: 10px;">remove</button>';
         cartHTML += '</td>';
         cartHTML += '</tr>';
     }
@@ -189,21 +230,21 @@ function displayCartItems() {
     var shipping = 15.00;
     var total = subtotal + shipping;
     
-    cartHTML += '<tr bgcolor="#5d4e37">';
-    cartHTML += '<td colspan="3" align="right"><font face="Georgia, serif" size="2" color="#a39691"><b>SUBTOTAL:</b></font></td>';
-    cartHTML += '<td align="center"><font face="Courier New, monospace" size="2" color="#8b8680"><b>$' + subtotal.toFixed(2) + '</b></font></td>';
+    cartHTML += '<tr style="border-top: 2px solid #666666; background-color: #f8f8f8;">';
+    cartHTML += '<td colspan="3" align="right" style="padding: 8px;"><font face="Geneva, Arial, sans-serif" size="2"><b>SUBTOTAL:</b></font></td>';
+    cartHTML += '<td align="center" style="padding: 8px;"><font face="Monaco, Courier, monospace" size="2"><b>$' + subtotal.toFixed(2) + '</b></font></td>';
     cartHTML += '<td></td>';
     cartHTML += '</tr>';
     
-    cartHTML += '<tr bgcolor="#5d4e37">';
-    cartHTML += '<td colspan="3" align="right"><font face="Georgia, serif" size="2" color="#a39691"><b>SHIPPING:</b></font></td>';
-    cartHTML += '<td align="center"><font face="Courier New, monospace" size="2" color="#8b8680"><b>$' + shipping.toFixed(2) + '</b></font></td>';
+    cartHTML += '<tr style="background-color: #f8f8f8;">';
+    cartHTML += '<td colspan="3" align="right" style="padding: 8px;"><font face="Geneva, Arial, sans-serif" size="2"><b>SHIPPING:</b></font></td>';
+    cartHTML += '<td align="center" style="padding: 8px;"><font face="Monaco, Courier, monospace" size="2"><b>$' + shipping.toFixed(2) + '</b></font></td>';
     cartHTML += '<td></td>';
     cartHTML += '</tr>';
     
-    cartHTML += '<tr bgcolor="#4a3c28">';
-    cartHTML += '<td colspan="3" align="right"><font face="Times New Roman, serif" size="3" color="#8b8680"><b>TOTAL:</b></font></td>';
-    cartHTML += '<td align="center"><font face="Times New Roman, serif" size="3" color="#8b8680"><b>$' + total.toFixed(2) + '</b></font></td>';
+    cartHTML += '<tr style="background-color: #e8e8e8; border-top: 1px solid #666666;">';
+    cartHTML += '<td colspan="3" align="right" style="padding: 8px;"><font face="Geneva, Arial, sans-serif" size="3"><b>TOTAL:</b></font></td>';
+    cartHTML += '<td align="center" style="padding: 8px;"><font face="Monaco, Courier, monospace" size="3"><b>$' + total.toFixed(2) + '</b></font></td>';
     cartHTML += '<td></td>';
     cartHTML += '</tr>';
     
